@@ -9,6 +9,7 @@ Here are sample rules found in the XML.
 
 |**Rule Name**|**Details**|**Definition**|
 |-----|-----|-----|
+|Shape Connections|Process Component shapes shall not have an unset path|/Component/Object/process/shapes/shape/dragpoints/dragpoint[@toShape='unset']|
 |Components name|Component names shall not start with "New ".|/Component/Name/text()[starts-with(., 'New ')]|
 |Process description|Process description must not be empty|/Component/Type[text()="process"]/../Description[not(text())]|
 |Exceptions message |Business exception message shall have at least one parameter defined {1} |/Component/Object/process[@enableUserLog]/shapes/shape[@image="exception_icon"]/configuration/exception/exMessage/text()[not(contains(.,'{1}'))]|
