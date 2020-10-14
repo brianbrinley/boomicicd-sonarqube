@@ -3,6 +3,29 @@
    <name>Boomi</name>
    <language>xml</language>
    <rules>
+	   <rule>
+		   <repositoryKey>xml</repositoryKey>
+		   <key>Shape_Shall_Not_Have_An_Unset_Path</key>
+		   <type>CODE_SMELL</type>
+		   <priority>MAJOR</priority>
+		   <name>Shape Shall Not Have An Unset Path</name>
+		   <templateKey>XPathCheck</templateKey>
+		   <description>Any process components that contain a shape which produces an output path should always have a connected target shape.</description>
+		   <parameters>
+			   <parameter>
+				   <key>filePattern</key>
+				   <value>**/**.xml</value>
+			   </parameter>
+			   <parameter>
+				   <key>expression</key>
+				   <value>/Component/Object/process/shapes/shape/dragpoints/dragpoint[@toShape='unset']</value>
+			   </parameter>
+			   <parameter>
+				   <key>message</key>
+				   <value>All Process shapes with output paths should be connected to a target shape. Please review and correct any unconnected shapes.</value>
+			   </parameter>
+		   </parameters>
+	   </rule>
       <rule>
          <repositoryKey>xml</repositoryKey>
          <key>Components_Shall_Not_Start_With_New</key>
