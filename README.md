@@ -9,6 +9,7 @@ Here are sample rules found in the XML.
 
 |**Rule Name**|**Details**|**Definition**|
 |-----|-----|-----|
+|Stop Shape Continues|Any stop shape which has should continue other paths except under very explicit situations|/Component/Object/process/shapes/shape/configuration/stop[@continue ="false"]|
 |Shape Connections|Process Component shapes shall not have an unset path|/Component/Object/process/shapes/shape/dragpoints/dragpoint[@toShape='unset']|
 |Components name|Component names shall not start with "New ".|/Component/Name/text()[starts-with(., 'New ')]|
 |Process description|Process description must not be empty|/Component/Type[text()="process"]/../Description[not(text())]|
