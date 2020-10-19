@@ -5,6 +5,29 @@
    <rules>
 	   <rule>
 		   <repositoryKey>xml</repositoryKey>
+		   <key>Stop_Shape_Does_Not_Continue</key>
+		   <type>CODE_SMELL</type>
+		   <priority>MAJOR</priority>
+		   <name>Stop Shapes Should Continue Other Paths</name>
+		   <templateKey>XPathCheck</templateKey>
+		   <description>Any stop shape which has should continue other paths except under very explicit situations. </description>
+		   <parameters>
+			   <parameter>
+				   <key>filePattern</key>
+				   <value>**/**.xml</value>
+			   </parameter>
+			   <parameter>
+				   <key>expression</key>
+				   <value>/Component/Object/process/shapes/shape/configuration/stop[@continue ="false"]</value>
+			   </parameter>
+			   <parameter>
+				   <key>message</key>
+				   <value>All stop shapes should continue other code paths unless explicitely part of the business process. </value>
+			   </parameter>
+		   </parameters>
+	   </rule>
+	   <rule>
+		   <repositoryKey>xml</repositoryKey>
 		   <key>Shape_Shall_Not_Have_An_Unset_Path</key>
 		   <type>CODE_SMELL</type>
 		   <priority>MAJOR</priority>
